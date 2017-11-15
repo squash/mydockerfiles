@@ -7,7 +7,7 @@ RUN export NODE_PATH=”/usr/local/lib/node_modules” &&  npm install -g n --pr
 RUN export NODE_PATH=”/usr/local/lib/node_modules” && export PATH=/usr/local/bin:$PATH && cd /root/GitHub/core/ && /usr/local/bin/npm install packages
 RUN export NODE_PATH=”/usr/local/lib/node_modules” && export PATH=/usr/local/bin:$PATH && cd /root/GitHub/core/ && /usr/local/bin/npm install
 RUN export NODE_PATH=”/usr/local/lib/node_modules” && export PATH=/usr/local/bin:$PATH && cd /root/GitHub/core && ./scripts/install-sdk.sh
-RUN wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz -O /tmp/go.tgz && cd /usr/local/ && tar zxf /tmp/go.tgz && cp /usr/local/go/bin/* /usr/local/bin && rm /tmp/go.tgz
+RUN wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz -O /tmp/go.tgz && cd /usr/local/ && tar zxf /tmp/go.tgz && cp /usr/local/go/bin/* /usr/local/bin && rm /tmp/go.tgz
 RUN GOPATH=/root/.c9/go  go get github.com/nsf/gocode
 RUN mkdir /root/workspace
 COPY start.sh /
